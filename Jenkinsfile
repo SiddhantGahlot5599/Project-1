@@ -12,7 +12,9 @@ pipeline{
         steps{
             script {
                 sh """
-                if which aws &> /dev/null
+                which aws &> /dev/null
+
+                if [$? -eq 0 ]
 
                 then
 
