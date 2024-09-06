@@ -12,7 +12,7 @@ pipeline{
         steps{
             script {
                 sh """
-                if aws --version &> /dev/null
+                if which aws &> /dev/null
 
                 then
 
