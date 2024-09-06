@@ -8,29 +8,7 @@ pipeline{
 
     stages {
   
-       stage('Install AWS CLI') {
-        steps{
-            script {
-                sh '''
-                if aws --version &> /dev/null
-
-                then
-
-                    echo "AWS CLI is already installed"
-                    echo $PATH
-
-                else
-                    echo "AWS CLI not found, Installing..."
-                    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-                    unzip awscliv2.zip
-                    ./aws/install --bin-dir ~/bin --install-dir ~/aws-cli --update
-                    export PATH=~/bin:$PATH
-                fi
-
-                '''
-            }
-        }
-       }
+       
 
 
         stage('Clone Repository'){
