@@ -11,7 +11,7 @@ pipeline{
        stage('Install AWS CLI') {
         steps{
             script {
-                sh """
+             sh """
                 which aws &> /dev/null
 
                 if [$? -eq 0 ]
