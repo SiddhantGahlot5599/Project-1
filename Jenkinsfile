@@ -11,7 +11,7 @@ pipeline{
        stage('Install AWS CLI') {
         steps{
             script {
-                sh '''
+                sh """
                 if aws --version &> /dev/null
 
                 then
@@ -27,7 +27,7 @@ pipeline{
                     export PATH=~/bin:$PATH
                 fi
 
-                '''
+                """
             }
         }
        }
